@@ -70,9 +70,25 @@ cd ComfyUI/custom_nodes
 git clone https://github.com/yourusername/ComfyUI_WanVace-pipeline.git
 ```
 
-2. Install dependencies:
+2. Install dependencies
+
+### ComfyUI Portable (Windows)
+Open PowerShell in your ComfyUI root folder and run (adjust the path to python.exe if needed):
+```powershell
+# Ensure pip exists on the embedded Python
+./python_embeded/python.exe -m ensurepip --upgrade
+
+# Upgrade pip and install this node's requirements
+./python_embeded/python.exe -m pip install --upgrade pip
+./python_embeded/python.exe -m pip install -r custom_nodes/ComfyUI_WanVace-pipeline/requirements.txt
+```
+Typical embedded python paths:
+- `ComfyUI\python_embeded\python.exe` (older builds)
+- `ComfyUI\python_embeded\python312\python.exe` (newer builds)
+
+### System-wide Python (non-portable)
 ```bash
-pip install -r requirements.txt
+pip install -r custom_nodes/ComfyUI_WanVace-pipeline/requirements.txt
 ```
 
 3. Restart ComfyUI
@@ -257,3 +273,8 @@ See [CLAUDE.md](CLAUDE.md) for development guidelines and architecture details.
 
 Developed for ComfyUI by the WAN Vace Pipeline team.
 Special thanks to the ComfyUI community for their support and feedback.
+
+### Borrowed and modified nodes
+This project includes nodes adapted (borrowed and modified) from the following repositories. Please see their licenses and original implementations for details:
+- [kijai/ComfyUI-WanVideoWrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper)
+- [lquesada/ComfyUI-Inpaint-CropAndStitch](https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch)
