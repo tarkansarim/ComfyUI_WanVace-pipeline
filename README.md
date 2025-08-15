@@ -73,18 +73,19 @@ git clone https://github.com/yourusername/ComfyUI_WanVace-pipeline.git
 2. Install dependencies
 
 ### ComfyUI Portable (Windows)
-Open PowerShell in your ComfyUI root folder and run (adjust the path to python.exe if needed):
+Open CMD/PowerShell inside this folder `custom_nodes/ComfyUI_WanVace-pipeline` and run:
 ```powershell
-# Ensure pip exists on the embedded Python
-./python_embeded/python.exe -m ensurepip --upgrade
+# If embedded Python is at ComfyUI\python_embeded\python.exe
+..\..\..\python_embeded\python.exe -m ensurepip --upgrade
+..\..\..\python_embeded\python.exe -m pip install --upgrade pip
+..\..\..\python_embeded\python.exe -m pip install -r requirements.txt
 
-# Upgrade pip and install this node's requirements
-./python_embeded/python.exe -m pip install --upgrade pip
-./python_embeded/python.exe -m pip install -r custom_nodes/ComfyUI_WanVace-pipeline/requirements.txt
+# If your portable uses python312 (newer builds), use this instead:
+..\..\..\python_embeded\python312\python.exe -m ensurepip --upgrade
+..\..\..\python_embeded\python312\python.exe -m pip install --upgrade pip
+..\..\..\python_embeded\python312\python.exe -m pip install -r requirements.txt
 ```
-Typical embedded python paths:
-- `ComfyUI\python_embeded\python.exe` (older builds)
-- `ComfyUI\python_embeded\python312\python.exe` (newer builds)
+This works because from inside the node folder, the ComfyUI root is `..\\..\\..`.
 
 ### System-wide Python (non-portable)
 ```bash
