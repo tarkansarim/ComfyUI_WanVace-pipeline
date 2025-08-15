@@ -1,6 +1,6 @@
 # ComfyUI WAN Vace Pipeline
 
-A comprehensive suite of video processing and timeline management nodes for ComfyUI, designed for AI-based frame interpolation workflows.
+WAN 2.1–focused AI video toolkit for ComfyUI: advanced keyframe timeline, batch-aware processing, and integrated masking/outpainting for professional workflows.
 
 ## Features
 
