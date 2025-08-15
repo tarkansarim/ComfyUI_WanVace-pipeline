@@ -76,12 +76,10 @@ git clone https://github.com/yourusername/ComfyUI_WanVace-pipeline.git
 Open CMD/PowerShell inside this folder `custom_nodes/ComfyUI_WanVace-pipeline` and run:
 ```powershell
 # If embedded Python is at ComfyUI\python_embeded\python.exe
-..\..\..\python_embeded\python.exe -m ensurepip --upgrade
 ..\..\..\python_embeded\python.exe -m pip install --upgrade pip
 ..\..\..\python_embeded\python.exe -m pip install -r requirements.txt
 
 # If your portable uses python312 (newer builds), use this instead:
-..\..\..\python_embeded\python312\python.exe -m ensurepip --upgrade
 ..\..\..\python_embeded\python312\python.exe -m pip install --upgrade pip
 ..\..\..\python_embeded\python312\python.exe -m pip install -r requirements.txt
 ```
@@ -224,27 +222,6 @@ pip install -r custom_nodes/ComfyUI_WanVace-pipeline/requirements.txt
 #### Browser Compatibility
 - **Image Persistence**: Use "Select Image Folder" if images don't reload after browser restart
 - **Drag & Drop**: Ensure images are dropped directly onto the dark timeline track area
-
-## Node Structure
-
-```
-ComfyUI_WanVace-pipeline/
-├── __init__.py              # Main node registration
-├── nodes/                   # Node implementations
-│   ├── __init__.py         
-│   ├── video_io.py         # Video I/O operations
-│   ├── video_processing.py  # Video manipulation
-│   ├── timeline.py         # Timeline widget
-│   ├── frame_utils.py      # Frame utilities
-│   ├── effects.py          # Visual effects
-│   └── mask_editor.py      # Mask editor integration
-├── web/                    # Frontend code
-│   └── js/
-│       ├── wan_keyframe_timeline.js  # Timeline widget
-│       └── wan_mask_editor.js        # Mask editor widget
-└── reference/              # Reference implementation
-
-```
 
 ## Workflow Examples
 
