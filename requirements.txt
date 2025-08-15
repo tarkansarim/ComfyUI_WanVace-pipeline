@@ -1,0 +1,4 @@
+opencv-python>=4.5.0
+numpy>=1.19.0
+PyQt5>=5.15.0  # Required for mask editor
+psutil>=5.8.0  # Required for memory profiling in tests
